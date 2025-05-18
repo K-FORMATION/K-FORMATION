@@ -90,7 +90,7 @@
       font-size: 1.1rem;
       margin-bottom: 1.2rem;
     }
-    a.cta-button {
+    a.cta-button, button.cta-button {
       display: inline-block;
       background-color: #2f4f4f;
       color: white;
@@ -102,8 +102,9 @@
       font-size: 1.15rem;
       box-shadow: 0 4px 8px rgba(47, 79, 79, 0.2);
       cursor: pointer;
+      border: none;
     }
-    a.cta-button:hover {
+    a.cta-button:hover, button.cta-button:hover {
       background-color: #1e3535;
       box-shadow: 0 6px 14px rgba(30, 53, 53, 0.4);
     }
@@ -155,25 +156,9 @@
       top: 10px; right: 10px;
       background: transparent;
       border: none;
-      font-size: 20px;
+      font-size: 24px;
       cursor: pointer;
-    }
-    /* Bouton d'ouverture pour Getform */
-    button#openFormBtn {
-      padding: 1rem 2.2rem;
-      font-size: 1.15rem;
-      font-weight: 700;
-      border-radius: 8px;
-      background-color: #2f4f4f;
-      color: white;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(47, 79, 79, 0.2);
-      transition: background-color 0.3s ease;
-    }
-    button#openFormBtn:hover {
-      background-color: #1e3535;
-      box-shadow: 0 6px 14px rgba(30, 53, 53, 0.4);
+      line-height: 1;
     }
     /* Formulaire dans la modale */
     form label {
@@ -235,7 +220,6 @@
       </div>
     </section>
 
-    <!-- Section Google Form intégrée -->
     <section>
       <div class="flex-row">
         <img src="https://cdn-icons-png.flaticon.com/512/2913/2913214.png" alt="Questionnaire" class="section-image" />
@@ -252,6 +236,68 @@
             <li>Mise en ligne d’une version bêta du site avec ces fiches</li>
             <li>Ouverture élargie et amélioration continue selon vos retours</li>
           </ul>
-          <!-- Intégration iframe Google Form -->
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdPqlTajV1KaSIReDufn3ZitfSVX66p_voJov7Lp13deTblkA/viewform?embedded=true" 
-                  width="100%" height="600" frameborder="0" marginheight="0" margin
+<!-- Google Form intégré -->
+<iframe src="https://forms.gle/6ZCBLYZDf4yrMEs57" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" aria-label="Questionnaire K-Formation">
+  Chargement…
+</iframe>
+  </div>
+      </div>
+    </section>
+
+    <section style="text-align:center;">
+      <h2>Rejoignez la liste d’attente</h2>
+      <p>Inscrivez-vous pour être informé en avant-première du lancement de K-Formation.</p>
+      <button class="cta-button" id="openFormBtn">S'inscrire</button>
+    </section>
+  </main>
+
+  <!-- Modale formulaire -->
+  <div id="modalForm" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+    <div>
+      <button id="closeFormBtn" aria-label="Fermer le formulaire">&times;</button>
+      <h2 id="modalTitle">Inscription à la liste d’attente</h2>
+      <p id="modalDesc">Entrez votre adresse email pour être informé du lancement.</p>
+      <form action="https://getform.io/f/adrgydqa" method="POST">
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" placeholder="K-FORMATION-V1@outlook.fr" required />
+        <button type="submit">Envoyer</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 K-Formation - Tous droits réservés
+  </footer>
+
+  <script>
+    const modal = document.getElementById('modalForm');
+    const openBtn = document.getElementById('openFormBtn');
+    const closeBtn = document.getElementById('closeFormBtn');
+
+    openBtn.addEventListener('click', () => {
+      modal.style.display = 'block';
+      modal.querySelector('input[type=email]').focus();
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+      openBtn.focus();
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        openBtn.focus();
+      }
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.style.display === 'block') {
+        modal.style.display = 'none';
+        openBtn.focus();
+      }
+    });
+  </script>
+</body>
+</html>
+

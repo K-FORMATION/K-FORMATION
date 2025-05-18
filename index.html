@@ -5,75 +5,130 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>K-Formation - Plateforme de formations kiné</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
     body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Roboto', sans-serif;
       background-color: #f9f9f9;
       margin: 0;
       color: #333;
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
     header {
       background-color: #2f4f4f;
       color: #fff;
-      padding: 2rem 1rem;
+      padding: 3rem 1rem;
       text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
     header h1 {
       margin: 0;
       font-weight: 700;
-      font-size: 2.5rem;
+      font-size: 3rem;
+      letter-spacing: 2px;
     }
     header p {
-      margin-top: 0.5rem;
-      font-size: 1.2rem;
+      margin-top: 0.7rem;
+      font-size: 1.3rem;
       font-weight: 300;
+      opacity: 0.85;
     }
     main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      max-width: 960px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
     }
     section {
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
+      background: white;
+      padding: 2rem 2.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(47, 79, 79, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+    section:hover {
+      box-shadow: 0 4px 15px rgba(47, 79, 79, 0.25);
     }
     h2 {
-      border-bottom: 2px solid #2f4f4f;
-      padding-bottom: 0.3rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
+      border-bottom: 3px solid #2f4f4f;
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
       color: #2f4f4f;
+      font-size: 1.8rem;
+    }
+    h3 {
+      color: #2f4f4f;
+      font-weight: 600;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
     }
     ul {
       list-style: none;
       padding-left: 0;
+      margin-top: 0;
+    }
+    ul li {
+      position: relative;
+      padding-left: 1.4em;
+      margin-bottom: 0.8em;
+      font-size: 1.1rem;
     }
     ul li::before {
       content: "•";
       color: #2f4f4f;
-      display: inline-block;
-      width: 1em;
-      margin-left: -1em;
-      font-weight: bold;
+      position: absolute;
+      left: 0;
+      font-weight: 900;
+      font-size: 1.3rem;
+      line-height: 0;
+      top: 0.2em;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
     }
     a.cta-button {
       display: inline-block;
       background-color: #2f4f4f;
       color: white;
-      padding: 0.8rem 1.5rem;
+      padding: 1rem 2.2rem;
       text-decoration: none;
-      font-weight: 600;
-      border-radius: 5px;
+      font-weight: 700;
+      border-radius: 8px;
       transition: background-color 0.3s ease;
+      font-size: 1.15rem;
+      box-shadow: 0 4px 8px rgba(47, 79, 79, 0.2);
     }
     a.cta-button:hover {
       background-color: #1e3535;
+      box-shadow: 0 6px 14px rgba(30, 53, 53, 0.4);
     }
     footer {
       text-align: center;
       font-size: 0.9rem;
       color: #666;
-      padding: 1rem 0;
+      padding: 1.5rem 0;
       border-top: 1px solid #ddd;
+      margin-top: 3rem;
+    }
+    /* Responsive images */
+    .section-image {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+    }
+    .flex-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .flex-column {
+      flex: 1 1 320px;
     }
   </style>
 </head>
@@ -84,31 +139,70 @@
   </header>
   <main>
     <section>
-      <h2>Pourquoi K-Formation ?</h2>
-      <p>K-Formation recense, compare et recommande des formations testées et notées par des kinésithérapeutes professionnels. Notre objectif est de vous aider à choisir des formations réellement utiles et adaptées à vos besoins.</p>
+      <div class="flex-row">
+        <img src="https://cdn-icons-png.flaticon.com/512/2921/2921822.png" alt="Pourquoi K-Formation ?" class="section-image" />
+        <div class="flex-column">
+          <h2>Pourquoi K-Formation ?</h2>
+          <p>K-Formation recense, compare et recommande des formations testées et notées par des kinésithérapeutes professionnels. Notre objectif est de vous aider à choisir des formations réellement utiles et adaptées à vos besoins.</p>
+        </div>
+      </div>
     </section>
+
     <section>
-      <h2>Ce que vous trouverez sur la plateforme</h2>
-      <ul>
-        <li>Une base de données filtrable par spécialité, durée, prix et format (présentiel ou en ligne)</li>
-        <li>Des retours d’expérience concrets et objectifs</li>
-        <li>Un moteur de recherche intuitif pour vous guider dans vos choix</li>
-        <li>Des ressources pédagogiques complémentaires gratuites</li>
-      </ul>
+      <div class="flex-row">
+        <img src="https://cdn-icons-png.flaticon.com/512/2917/2917995.png" alt="Ce que vous trouverez" class="section-image" />
+        <div class="flex-column">
+          <h2>Ce que vous trouverez sur la plateforme</h2>
+          <ul>
+            <li>Une base de données filtrable par spécialité, durée, prix et format (présentiel ou en ligne)</li>
+            <li>Des retours d’expérience concrets et objectifs</li>
+            <li>Un moteur de recherche intuitif pour vous guider dans vos choix</li>
+            <li>Des ressources pédagogiques complémentaires gratuites</li>
+          </ul>
+        </div>
+      </div>
     </section>
+
     <section>
-      <h2>Rejoignez la liste d’attente</h2>
-      <p>Inscrivez-vous dès maintenant pour accéder à la version bêta et participer à la co-construction de K-Formation.</p>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdPqlTajV1KaSIReDufn3ZitfSVX66p_voJov7Lp13deTblkA/viewform?embedded=true" 
-              width="640" 
-              height="3487" 
-              frameborder="0" 
-              marginheight="0" 
-              marginwidth="0">Chargement…</iframe>
+      <div class="flex-row">
+        <img src="https://cdn-icons-png.flaticon.com/512/2913/2913214.png" alt="Questionnaire" class="section-image" />
+        <div class="flex-column">
+          <h2>Votre avis compte - Participez au questionnaire</h2>
+          <p>Ce formulaire a pour but de mieux comprendre vos besoins en matière de formations pour kinésithérapeutes. En quelques questions, vous nous aidez à recenser les formations déjà suivies, à identifier les critères essentiels avant de s'inscrire, et à construire une plateforme utile, pertinente et adaptée à vos attentes.</p>
+          <h3>Étapes du projet K-Formation :</h3>
+          <ul>
+            <li>Recueil des besoins des kinésithérapeutes via le questionnaire</li>
+            <li>Sélection des formations les plus mentionnées par la communauté</li>
+            <li>Définition des critères de qualité d'une formation selon vos attentes</li>
+            <li>Enrichissement des données avec des retours ciblés sur les formations</li>
+            <li>Création des fiches formations détaillées et structurées</li>
+            <li>Mise en ligne d’une version bêta du site avec ces fiches</li>
+            <li>Ouverture élargie et amélioration continue selon vos retours</li>
+          </ul>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPqlTajV1KaSIReDufn3ZitfSVX66p_voJov7Lp13deTblkA/viewform?embedded=true" target="_blank" class="cta-button">Participer au questionnaire</a>
+        </div>
+      </div>
     </section>
+
     <section>
-      <h2>Contact</h2>
-      <p>Pour toute question ou suggestion : <a href="mailto:contact@k-formation.fr">contact@k-formation.fr</a></p>
+      <div class="flex-row">
+        <img src="https://cdn-icons-png.flaticon.com/512/1087/1087926.png" alt="Inscription" class="section-image" />
+        <div class="flex-column">
+          <h2>Rejoignez la liste d’attente</h2>
+          <p>Inscrivez-vous dès maintenant pour accéder à la version bêta et participer à la co-construction de K-Formation.</p>
+          <a href="https://docs.google.com/forms/d/e/TON-LIEN-GOOGLE-FORM/viewform" target="_blank" class="cta-button">S’inscrire</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="flex-row">
+        <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Contact" class="section-image" />
+        <div class="flex-column">
+          <h2>Contact</h2>
+          <p>Pour toute question ou suggestion : <a href="mailto:contact@k-formation.fr">contact@k-formation.fr</a></p>
+        </div>
+      </div>
     </section>
   </main>
   <footer>
